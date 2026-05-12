@@ -2,6 +2,7 @@ import { z } from "zod"
 import {
   resend,
   RESEND_FROM_ADDRESS,
+  RESEND_NOTIFY_FROM_ADDRESS,
   RESEND_AUDIENCE_ID,
   NOTIFY_EMAIL,
 } from "@/lib/resend"
@@ -85,14 +86,17 @@ export async function POST(req: Request) {
       )
     }
 
-    // 3. Notify the owner (you) so you see signups land in real time
+    // 3. Notify the owner (you) so you see signups land in real time.
+    // replyTo is set to the signup email — hitting Reply in Gmail goes directly
+    // to the new user, perfect for cold-start manual outreach.
     if (NOTIFY_EMAIL && NOTIFY_EMAIL !== email) {
       await resend.emails
         .send({
-          from: `cronwiz waitlist <${RESEND_FROM_ADDRESS}>`,
+          from: `cronwiz waitlist <${RESEND_NOTIFY_FROM_ADDRESS}>`,
           to: NOTIFY_EMAIL,
+          replyTo: email,
           subject: `🎯 New waitlist signup: ${email}`,
-          text: `${email}\n\nJoined at: ${new Date().toISOString()}\nIP: ${ip}`,
+          text: `${email}\n\nJoined at: ${new Date().toISOString()}\nIP: ${ip}\n\nHit Reply to email this person directly.`,
         })
         .catch((err) => {
           // Non-fatal — don't fail the user's request if owner notify fails
