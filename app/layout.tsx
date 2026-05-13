@@ -7,9 +7,26 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'cronwiz.dev — AI Cron Expression Generator',
-  description: 'Type schedules in plain English. Get production-ready cron expressions for Linux, AWS, Kubernetes, GitHub Actions, Vercel, and 5 more platforms.',
-  generator: 'v0.app',
+  title: 'AI Cron Expression Generator with Job Monitoring | cronwiz.dev',
+  description: 'Type schedules in plain English, validate any cron expression, and monitor cron jobs across 7 platforms. Free cron generator for Linux, AWS, Kubernetes, GitHub Actions, Vercel, and more.',
+  keywords: ['cron expression generator', 'cron explainer', 'cron validator', 'cron monitoring', 'cron job not running', 'crontab generator'],
+  authors: [{ name: 'cronwiz.dev' }],
+  openGraph: {
+    title: 'AI Cron Expression Generator with Job Monitoring',
+    description: 'Type schedules in plain English, validate any cron expression, and monitor cron jobs across 7 platforms. Free for indies.',
+    url: 'https://cronwiz.dev',
+    siteName: 'cronwiz.dev',
+    type: 'website',
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Cron Expression Generator with Job Monitoring',
+    description: 'Type schedules in plain English, validate any cron expression, and monitor cron jobs across 7 platforms. Free for indies.',
+  },
+  alternates: {
+    canonical: 'https://cronwiz.dev',
+  },
   icons: {
     icon: [
       {
