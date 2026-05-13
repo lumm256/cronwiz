@@ -65,6 +65,12 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-KBY7RT3GT9');`}
         </Script>
+        <Script
+          defer
+          data-domain="cronwiz.dev"
+          src="https://click.pageview.click/js/script.js"
+          strategy="afterInteractive"
+        />
       </head>
       <body className="font-sans antialiased bg-background text-foreground">
         {children}
