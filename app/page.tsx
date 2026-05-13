@@ -119,12 +119,13 @@ export default function HomePage() {
             <Link href="#faq" className="hover:text-foreground transition-colors">FAQ</Link>
           </nav>
           <a
-            href="https://github.com"
+            href="https://github.com/lumm256/cronwiz"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="cronwiz on GitHub"
             className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
-            <Github className="w-4 h-4" />
+            <Github className="w-4 h-4" aria-hidden="true" />
             <span className="hidden sm:inline">GitHub</span>
           </a>
         </div>

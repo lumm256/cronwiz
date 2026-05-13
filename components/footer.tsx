@@ -21,21 +21,23 @@ export function Footer() {
             <Link href="#" className="hover:text-foreground transition-colors">About</Link>
             <Link href="#" className="hover:text-foreground transition-colors">Privacy</Link>
             <Link href="#" className="hover:text-foreground transition-colors">Terms</Link>
-            <a 
-              href="https://twitter.com" 
-              target="_blank" 
+            <a
+              href="https://twitter.com"
+              target="_blank"
               rel="noopener noreferrer"
+              aria-label="cronwiz on Twitter"
               className="hover:text-foreground transition-colors"
             >
-              <Twitter className="w-5 h-5" />
+              <Twitter className="w-5 h-5" aria-hidden="true" />
             </a>
-            <a 
-              href="https://github.com" 
-              target="_blank" 
+            <a
+              href="https://github.com/lumm256/cronwiz"
+              target="_blank"
               rel="noopener noreferrer"
+              aria-label="cronwiz on GitHub"
               className="hover:text-foreground transition-colors"
             >
-              <Github className="w-5 h-5" />
+              <Github className="w-5 h-5" aria-hidden="true" />
             </a>
           </nav>
         </div>

@@ -411,7 +411,7 @@ export function CronTool() {
       <div className="mt-8 pt-6 border-t border-border flex flex-col sm:flex-row items-center justify-center gap-4 text-sm text-muted-foreground">
         <span>Free forever · Powered by Claude · Open prompt</span>
         <a
-          href="https://github.com/cronwiz/cronwiz"
+          href="https://github.com/lumm256/cronwiz"
           target="_blank"
           rel="noopener noreferrer"
           className="text-foreground hover:text-primary transition-colors flex items-center gap-1"
