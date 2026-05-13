@@ -13,5 +13,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog/best-cron-monitoring-tools-2026`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/vs/cronitor`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/vs/healthchecks`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
+    { url: `${base}/about`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.3 },
+    { url: `${base}/privacy`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.3 },
+    { url: `${base}/terms`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.3 },
   ]
 }

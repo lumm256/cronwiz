@@ -1,8 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import Link from "next/link"
-import { ArrowLeft, ShieldCheck, Sparkles, AlertCircle } from "lucide-react"
+import { ShieldCheck, Sparkles, AlertCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import type { CronAnalysis } from "@/lib/types"
 import { PLATFORM_LABELS, type Platform } from "@/lib/types"
@@ -107,14 +106,6 @@ export default function ValidatePage() {
   return (
     <div className="min-h-screen bg-background">
       <div className="max-w-3xl mx-auto px-4 py-16">
-        <Link
-          href="/"
-          className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground mb-8"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          Back to cronwiz.dev
-        </Link>
-
         <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-balance">
           Cron Expression Validator
         </h1>

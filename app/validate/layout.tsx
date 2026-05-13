@@ -1,8 +1,10 @@
 import type { Metadata } from "next"
+import { Header } from "@/components/header"
+import { Footer } from "@/components/footer"
 
 export const metadata: Metadata = {
   title: "Cron Expression Validator — Check Syntax Across 7 Platforms | cronwiz.dev",
-  description: "Validate your cron expression against Linux, AWS EventBridge, Kubernetes, GitHub Actions, Vercel, Quartz, and Cloudflare Workers. Catch platform-specific issues before they break production.",
+  description: "Validate your cron expression against Linux, AWS EventBridge, Kubernetes, GitHub Actions, Vercel, Quartz, and Cloudflare Workers.",
   alternates: { canonical: "https://cronwiz.dev/validate" },
   openGraph: {
     title: "Cron Expression Validator",
@@ -12,5 +14,11 @@ export const metadata: Metadata = {
 }
 
 export default function ValidateLayout({ children }: { children: React.ReactNode }) {
-  return children
+  return (
+    <>
+      <Header />
+      <div className="pt-14">{children}</div>
+      <Footer />
+    </>
+  )
 }

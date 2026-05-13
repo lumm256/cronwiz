@@ -18,14 +18,14 @@ export function Footer() {
 
           {/* Links */}
           <nav className="flex items-center gap-6 text-sm text-muted-foreground">
-            <Link href="#" className="hover:text-foreground transition-colors">About</Link>
-            <Link href="#" className="hover:text-foreground transition-colors">Privacy</Link>
-            <Link href="#" className="hover:text-foreground transition-colors">Terms</Link>
+            <Link href="/about" className="hover:text-foreground transition-colors">About</Link>
+            <Link href="/privacy" className="hover:text-foreground transition-colors">Privacy</Link>
+            <Link href="/terms" className="hover:text-foreground transition-colors">Terms</Link>
             <a
-              href="https://twitter.com"
+              href="https://x.com/lumm256"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="cronwiz on Twitter"
+              aria-label="cronwiz on X"
               className="hover:text-foreground transition-colors"
             >
               <Twitter className="w-5 h-5" aria-hidden="true" />

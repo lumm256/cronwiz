@@ -1,4 +1,6 @@
 import type { Metadata } from "next"
+import { Header } from "@/components/header"
+import { Footer } from "@/components/footer"
 
 export const metadata: Metadata = {
   title: "Cron Expression Explainer — Paste Any Cron, Get Plain English | cronwiz.dev",
@@ -12,5 +14,11 @@ export const metadata: Metadata = {
 }
 
 export default function ExplainLayout({ children }: { children: React.ReactNode }) {
-  return children
+  return (
+    <>
+      <Header />
+      <div className="pt-14">{children}</div>
+      <Footer />
+    </>
+  )
 }
