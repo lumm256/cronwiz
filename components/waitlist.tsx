@@ -47,7 +47,7 @@ export function Waitlist() {
         </div>
 
         <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-balance">
-          Get Notified When AI Cron Monitoring Launches
+          Coming Soon: AI Cron Monitoring
         </h2>
 
         <p className="text-muted-foreground mb-8 leading-relaxed">

@@ -1,0 +1,32 @@
+# cronwiz.dev
+
+> AI Cron Expression Generator with Job Monitoring
+
+## What is cronwiz?
+
+cronwiz.dev is a free AI-powered tool that generates, explains, and validates cron expressions for 7+ platforms. Type schedules in plain English and get production-ready cron syntax for Linux, AWS EventBridge, Kubernetes, GitHub Actions, Vercel, Cloudflare Workers, and Quartz/Spring.
+
+## Site structure
+
+- / — Homepage with interactive cron generator tool
+- /explain — Cron expression explainer (paste any cron, get plain-English breakdown)
+- /validate — Cross-platform cron syntax validator
+- /test — Preview next 10 scheduled runs for any cron expression
+
+## Key features
+
+- Plain English to cron expression conversion
+- 7+ platform support (Linux, AWS, Kubernetes, GitHub Actions, Vercel, Cloudflare, Quartz/Spring)
+- Timezone and DST handling
+- Platform-specific warnings (plan limits, syntax differences)
+- Edge case detection (impossible dates, ambiguous fields)
+
+## Pricing
+
+- Free: Cron generator, explainer, validator — no signup required
+- Plus ($5/mo): 25 cron monitors, AI explainer, Slack/Discord alerts, 90-day history (coming Q3 2026)
+
+## Contact
+
+- Website: https://cronwiz.dev
+- Email: hi@cronwiz.dev
