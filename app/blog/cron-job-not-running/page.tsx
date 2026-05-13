@@ -16,6 +16,15 @@ export const metadata: Metadata = {
 export default function CronJobNotRunning() {
   return (
     <>
+      <nav aria-label="Breadcrumb" className="mb-8 text-sm text-muted-foreground">
+        <ol className="flex items-center gap-1.5">
+          <li><Link href="/" className="hover:text-foreground transition-colors">Home</Link></li>
+          <li>/</li>
+          <li><Link href="/blog" className="hover:text-foreground transition-colors">Blog</Link></li>
+          <li>/</li>
+          <li className="text-foreground truncate">8 Causes & Fixes</li>
+        </ol>
+      </nav>
       <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-balance">
         Why Is My Cron Job Not Running? 8 Causes & Fixes
       </h1>

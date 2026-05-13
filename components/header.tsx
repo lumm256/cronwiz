@@ -14,7 +14,7 @@ export function Header() {
         <nav className="hidden md:flex items-center gap-6 text-sm text-muted-foreground">
           <Link href="/#tool" className="hover:text-foreground transition-colors">Tool</Link>
           <Link href="/#features" className="hover:text-foreground transition-colors">Features</Link>
-          <Link href="/blog/cron-job-not-running" className="hover:text-foreground transition-colors">Blog</Link>
+          <Link href="/blog" className="hover:text-foreground transition-colors">Blog</Link>
           <Link href="/#faq" className="hover:text-foreground transition-colors">FAQ</Link>
         </nav>
         <a

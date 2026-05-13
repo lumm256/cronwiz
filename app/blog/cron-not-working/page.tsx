@@ -16,6 +16,15 @@ export const metadata: Metadata = {
 export default function CronNotWorking() {
   return (
     <>
+      <nav aria-label="Breadcrumb" className="mb-8 text-sm text-muted-foreground">
+        <ol className="flex items-center gap-1.5">
+          <li><Link href="/" className="hover:text-foreground transition-colors">Home</Link></li>
+          <li>/</li>
+          <li><Link href="/blog" className="hover:text-foreground transition-colors">Blog</Link></li>
+          <li>/</li>
+          <li className="text-foreground truncate">Debugging Checklist</li>
+        </ol>
+      </nav>
       <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-balance">
         Cron Not Working? A Debugging Checklist for Every Platform
       </h1>
