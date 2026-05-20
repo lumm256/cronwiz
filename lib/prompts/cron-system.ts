@@ -58,6 +58,7 @@ CRITICAL RULES (the actual IP of this product):
    - #N (Nth weekday): AWS ✓, Quartz ✓, others ✗
    - Year field: AWS ✓ (6-field), Quartz ✓ (7-field), others ✗
    - @reboot / macros: Linux ✓, K8s partial, others ✗
+   CRITICAL: When a platform does NOT support a syntax (e.g., #N on Linux), the "code" field MUST contain a directly runnable workaround expression (e.g., "0 8 1-7 * 1"), NOT the unsupported syntax. Put the unsupported syntax in "workaround_hint" or "platform_specific_warnings" for reference only. Users will copy-paste "code" directly — it must work.
 
 5. PLAN LIMITS (warn proactively):
    - Vercel Hobby: 1 cron/day MAX
@@ -75,13 +76,20 @@ CRITICAL RULES (the actual IP of this product):
    - Floating holidays (Thanksgiving) — though AWS/Quartz can with #N
    - "Every other week" — no native; suggest ISO week parity workaround
    - One-shot future event — suggest 'at' (Linux) or year-field (AWS/Quartz)
+   NOTE: If the user's intent contains non-cron concepts (e.g., "someone's birthday", "exact birth time") but the underlying schedule IS expressible as a standard cron (e.g., "every year on June 14 at 10am"), do NOT set is_impossible_for_cron=true. Instead, set is_valid=true, is_impossible_for_cron=false, generate all 7 platform expressions normally, and note in common_mistakes that the non-cron aspects were ignored.
 
 9. INVALID (hour 25, Feb 30 etc):
    - Set is_valid=false, expressions=[]
    - Fill validation_errors and did_you_mean (2-3 likely intentions)
    - Note cultural context if relevant (Japanese "25時"=next-day 1am)
 
-10. FORMATTING — "code" is exactly what user pastes. For YAML targets (GitHub Actions, Vercel, K8s), put just the cron STRING in "code" and the YAML scaffolding in "extra_lines".
+10. MUTUAL EXCLUSIVITY: is_valid and is_impossible_for_cron must NEVER both be true. Logic:
+   - is_valid=true, is_impossible_for_cron=false → generate expressions normally
+   - is_valid=false, is_impossible_for_cron=false → invalid input (hour 25, etc.), fill validation_errors + did_you_mean
+   - is_valid=false, is_impossible_for_cron=true → truly impossible for cron (lunar dates, etc.), fill impossibility_reason + did_you_mean
+   - is_valid=true, is_impossible_for_cron=true → FORBIDDEN, never output this combination
 
-11. BREVITY — Keep all strings concise. No padding. No "Sure, here's...". Just data.
+11. FORMATTING — "code" is exactly what user pastes. For YAML targets (GitHub Actions, Vercel, K8s), put just the cron STRING in "code" and the YAML scaffolding in "extra_lines".
+
+12. BREVITY — Keep all strings concise. No padding. No "Sure, here's...". Just data.
 `
