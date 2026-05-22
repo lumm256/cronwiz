@@ -48,6 +48,9 @@ export function Footer() {
             <span className="mx-2">·</span>
             Powered by Claude.
           </p>
+          <p>
+            <a href="https://viesearch.com/">Viesearch - The Human-curated Search Engine</a>
+          </p>
         </div>
       </div>
     </footer>
