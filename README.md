@@ -39,6 +39,7 @@ Open [http://localhost:3000](http://localhost:3000).
 | Variable | Description |
 |----------|-------------|
 | `KIE_API_KEY` | kie.ai API key for Claude access |
+| `KIE_MODEL` | Optional. kie.ai model id (default `claude-sonnet-5-5`) |
 | `RESEND_API_KEY` | Resend email API key |
 | `RESEND_AUDIENCE_ID` | Resend audience for waitlist |
 | `RESEND_FROM_ADDRESS` | Sender address (e.g. hi@cronwiz.dev) |

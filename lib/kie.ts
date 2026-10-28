@@ -6,12 +6,13 @@
  *   The official SDK hard-codes the x-api-key header, so we'd have to monkey-patch.
  *   A 30-line fetch wrapper is cleaner and easier to debug.
  *
- * Docs: https://docs.kie.ai/market/claude/claude-sonnet-4-6.md
+ * Docs: https://docs.kie.ai/market/claude/claude-sonnet-5-5.md
  */
 
 export const KIE_API_KEY = process.env.KIE_API_KEY || ""
 export const KIE_BASE_URL = "https://api.kie.ai/claude/v1"
-export const KIE_MODEL = "claude-sonnet-4-6"
+// Override with KIE_MODEL env var to switch models without a code change.
+export const KIE_MODEL = process.env.KIE_MODEL || "claude-sonnet-5-5"
 
 export interface KieMessage {
   role: "user" | "assistant"
