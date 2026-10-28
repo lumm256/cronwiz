@@ -38,7 +38,7 @@ export default function AboutPage() {
         <h2 className="text-xl font-semibold text-foreground pt-4">Tech stack</h2>
         <p>
           Next.js, React, Tailwind, and Claude (via{" "}
-          <a href="https://kie.ai" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">kie.ai</a>
+          <a href="https://aicodewith.ai" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">AICodeWith</a>
           ). Hosted on Vercel. Email via Resend. Source code on{" "}
           <a href="https://github.com/lumm256/cronwiz" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">GitHub</a>.
         </p>

@@ -18,7 +18,7 @@ Type schedules in plain English — get production-ready cron for Linux, AWS, Ku
 
 - [Next.js 16](https://nextjs.org/) + React 19 + Tailwind 4
 - [shadcn/ui](https://ui.shadcn.com/) components
-- AI: Claude via [kie.ai](https://kie.ai)
+- AI: Claude via [AICodeWith](https://aicodewith.ai)
 - Email: [Resend](https://resend.com) + Cloudflare Email Routing
 - Hosting: [Vercel](https://vercel.com)
 
@@ -38,8 +38,8 @@ Open [http://localhost:3000](http://localhost:3000).
 
 | Variable | Description |
 |----------|-------------|
-| `KIE_API_KEY` | kie.ai API key for Claude access |
-| `KIE_MODEL` | Optional. kie.ai model id (default `claude-sonnet-5-5`) |
+| `AICODEWITH_API_KEY` | AICodeWith API key (`sk-acw-*`) for Claude access |
+| `AICODEWITH_MODEL` | Optional. Model id (default `claude-sonnet-4-6`) |
 | `RESEND_API_KEY` | Resend email API key |
 | `RESEND_AUDIENCE_ID` | Resend audience for waitlist |
 | `RESEND_FROM_ADDRESS` | Sender address (e.g. hi@cronwiz.dev) |
@@ -62,7 +62,7 @@ app/
 components/               # Reusable UI components
 lib/
 ├── prompts/              # AI system prompts (core IP)
-├── kie.ts                # kie.ai client
+├── llm.ts                # AICodeWith (Claude) client
 ├── types.ts              # Shared TypeScript types
 └── resend.ts             # Email client
 ```
@@ -93,7 +93,7 @@ AI 驱动的 cron 表达式生成器、解析器、验证器，以及即将上�
 
 - Next.js 16 + React 19 + Tailwind 4
 - shadcn/ui 组件库
-- AI：通过 kie.ai 调用 Claude
+- AI：通过 AICodeWith 调用 Claude
 - 邮件：Resend + Cloudflare Email Routing
 - 部署：Vercel
 

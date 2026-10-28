@@ -1,7 +1,7 @@
 import { NextRequest } from "next/server"
 import { z } from "zod"
 import { CRON_SYSTEM_PROMPT } from "@/lib/prompts/cron-system"
-import { openClaudeStream, extractTextDeltas, KieError } from "@/lib/kie"
+import { openClaudeStream, extractTextDeltas, LlmError } from "@/lib/llm"
 
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
@@ -70,8 +70,8 @@ export async function POST(req: NextRequest) {
       maxTokens: 2048,
     })
   } catch (err) {
-    if (err instanceof KieError) {
-      console.error("[generate] kie.ai open failed:", err.status, err.body)
+    if (err instanceof LlmError) {
+      console.error("[generate] AICodeWith open failed:", err.status, err.body)
       return Response.json(
         {
           error:
@@ -92,9 +92,9 @@ export async function POST(req: NextRequest) {
   //   - Use start() with an internal async loop (NOT pull()) — pull() is gated
   //     by consumer demand and turned out to be ~60x slower in practice on
   //     Next.js's HTTP transport. start() drains upstream eagerly.
-  //   - Emit a 1-byte heartbeat (newline) BEFORE the first kie.ai chunk so
+  //   - Emit a 1-byte heartbeat (newline) BEFORE the first upstream chunk so
   //     Vercel's streaming detection fires within seconds, preventing the
-  //     Hobby 10s function-timeout from killing us while kie.ai buffers.
+  //     Hobby 10s function-timeout from killing us while upstream buffers.
   //   - The leading newline is later stripped by the client's JSON extractor.
   const encoder = new TextEncoder()
 
@@ -104,7 +104,7 @@ export async function POST(req: NextRequest) {
       const decoder = new TextDecoder()
       let pendingBuffer = ""
 
-      // Early heartbeat — keeps the Vercel function alive while kie.ai buffers.
+      // Early heartbeat — keeps the Vercel function alive while upstream buffers.
       // The leading "\n" is harmless to the client's JSON extractor.
       controller.enqueue(encoder.encode("\n"))
 

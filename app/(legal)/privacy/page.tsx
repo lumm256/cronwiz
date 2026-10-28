@@ -32,7 +32,7 @@ export default function PrivacyPage() {
         <h2 className="text-xl font-semibold text-foreground">3. Third-party services</h2>
         <ul className="list-disc pl-6 space-y-2">
           <li><strong className="text-foreground">Vercel:</strong> Hosting and analytics (<a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">privacy policy</a>)</li>
-          <li><strong className="text-foreground">kie.ai:</strong> AI processing via Claude (<a href="https://kie.ai" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">kie.ai</a>)</li>
+          <li><strong className="text-foreground">AICodeWith:</strong> AI processing via Claude (<a href="https://aicodewith.ai" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">AICodeWith</a>)</li>
           <li><strong className="text-foreground">Resend:</strong> Email delivery (<a href="https://resend.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">privacy policy</a>)</li>
         </ul>
 
